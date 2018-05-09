@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XAMLUnit1.Views.NetflixRoulettePage" Title="Movie">
+    <ContentPage.Content>
+         <StackLayout>
+         <AbsoluteLayout>
+                <BoxView Color="Gray"  AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1"></BoxView>
+                <SearchBar x:Name="searchBar"
+                           Placeholder="Search By Actor's name" 
+                           PlaceholderColor="White"
+                           AbsoluteLayout.LayoutFlags="All"
+                           AbsoluteLayout.LayoutBounds="0.1,0.1,1,1"  SearchCommand="{Binding SearchMovieCommand}" ></SearchBar>
+            </AbsoluteLayout>
+
+       <ListView  x:Name="ListOfMovies"  
+            ItemsSource="{ Binding MovieList}"  ItemSelected="ListOfMovies_ItemSelected"   >
+            
+            <ListView.ItemTemplate>
+                    <DataTemplate>
+                 
+                        <ImageCell ImageSource="{Binding poster_path, 
+                                                StringFormat='https://image.tmdb.org/t/p/w500{0}'}"
+                                   Detail="{Binding title}" DetailColor="Black" 
+                                   Text="{Binding release_date}">
+                            
+                        </ImageCell>
+                        
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

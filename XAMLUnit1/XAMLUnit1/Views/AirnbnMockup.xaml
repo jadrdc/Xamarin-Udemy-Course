@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XAMLUnit1.Views.AirnbnMockup">
+    <ContentPage.Content >
+        <AbsoluteLayout BackgroundColor="White">
+            <BoxView Color="White" AbsoluteLayout.LayoutBounds="0,0,1,0.1" AbsoluteLayout.LayoutFlags="All"></BoxView>
+            <SearchBar Placeholder="Search"  AbsoluteLayout.LayoutBounds="0,0,1,0.1" AbsoluteLayout.LayoutFlags="All" TextChanged="SearchBar_TextChanged" ></SearchBar>
+
+            <ListView x:Name="Searchlist" 
+                      IsGroupingEnabled='True' GroupDisplayBinding="{Binding Title}" IsPullToRefreshEnabled="True" Refreshing="Searchlist_Refreshing"
+                AbsoluteLayout.LayoutBounds="0,0.18,1,0.5" AbsoluteLayout.LayoutFlags="All" SeparatorColor="Blue"
+ ItemSelected="Searchlist_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Location}"  TextColor="Blue" Detail="{Binding Checkout}" >
+                            <TextCell.ContextActions>
+                                <MenuItem Text="Delete Search" CommandParameter="{ Binding .}" IsDestructive="True" Clicked="MenuItem_Clicked"></MenuItem>
+                            </TextCell.ContextActions>
+                        </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

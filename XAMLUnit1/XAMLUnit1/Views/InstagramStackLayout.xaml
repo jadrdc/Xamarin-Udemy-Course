@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XAMLUnit1.Views.InstagramStackLayout">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                iOS="0, 20, 0, 0" />
+    </ContentPage.Padding>
+    
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" >
+            <Image Source="http://lorempixel.com/1920/1080/nature/3/"></Image>
+            <StackLayout Orientation="Horizontal" Spacing="20">
+                <Label Text="Like" TextColor="Aqua"  ></Label>
+                <Label Text="Comment" TextColor="Aqua"></Label>
+                <Label Text="Share" TextColor="Aqua"></Label>
+            </StackLayout>
+            <BoxView Color="#f0f0f0" HeightRequest="1"></BoxView>
+            <Label Text="700 Likes"></Label>
+            <Label Text="This is a shot yesterday in Skanor,Sweden, when driving homme, from a couple days of work in Demmark."></Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

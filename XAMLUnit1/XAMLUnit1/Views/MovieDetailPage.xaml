@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XAMLUnit1.Views.MovieDetailPage" Title="{Binding title}">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+            <Image  Source="{Binding poster_path, 
+                                                StringFormat='https://image.tmdb.org/t/p/w500{0}'}"
+                    Aspect="AspectFill"></Image>
+            <Label Text="{Binding title}" TextColor="Black" FontSize="Large"/>
+            <Label Text="{Binding release_date}" FontSize="Medium"/>
+            <Label Text="{Binding overview}"></Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

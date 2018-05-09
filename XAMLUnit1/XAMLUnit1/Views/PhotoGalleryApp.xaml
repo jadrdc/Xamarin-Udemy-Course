@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XAMLUnit1.Views.PhotoGalleryApp">
+    <ContentPage.Content>
+        <AbsoluteLayout BackgroundColor="Black">
+            <Image   AbsoluteLayout.LayoutBounds="0,0,1,1" 
+                    Aspect="AspectFit" x:Name="imageBack"
+                  AbsoluteLayout.LayoutFlags="All"  ></Image>
+
+            <StackLayout Orientation="Horizontal" Padding="20,20,20,20">
+                <Button Image="left"  Clicked="Previous_Button"
+                       AbsoluteLayout.LayoutBounds="0.05, 0.05, 100, 100" AbsoluteLayout.LayoutFlags="PositionProportional"></Button>
+                <ActivityIndicator  Color="White"
+                                   
+                                    IsRunning="{Binding	
+									Source={x:Reference	imageBack},													
+									Path=IsLoading}">
+
+                </ActivityIndicator>
+                <Button Image="right" Clicked="Next_Button" AbsoluteLayout.LayoutBounds="1, 0.05, 100, 100" 
+                        AbsoluteLayout.LayoutFlags="PositionProportional"></Button>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
